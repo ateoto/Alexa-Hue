@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'sinatra/base'
 require 'json'
 require './alexa_objects'
@@ -7,7 +9,8 @@ module Sinatra
   class MyApp < Sinatra::Base
     
     register Sinatra::Lights
-  
+ 
+    set :bind, '0.0.0.0'
     set :protection, :except => [:json_csrf]
     enable :inline_templates
 
